@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeatherView" customModule="WalgWalg_front_ios" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WeatherView" customModule="WalgWalg_front_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKr-vI-rda">
+                    <rect key="frame" x="171.5" y="144" width="71" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiV-NW-LQ9">
+                    <rect key="frame" x="171.5" y="200" width="71" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fej-Ti-4OR">
+                    <rect key="frame" x="171.5" y="256" width="71" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="amU-XI-BuP">
+                    <rect key="frame" x="25" y="642" width="364" height="220"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8sk-Us-cNy">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BsT-Pv-qhk">
+                    <rect key="frame" x="34" y="603" width="113" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="Today"/>
+                        <segment title="Week"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentControllClick:" destination="iN0-l3-epB" eventType="valueChanged" id="obb-j1-o6j"/>
+                    </connections>
+                </segmentedControl>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wBF-uJ-1Ll">
+                    <rect key="frame" x="25" y="641" width="364" height="221"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bvu-ZA-syq">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="wBF-uJ-1Ll" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1fX-52-Dxy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wBF-uJ-1Ll" secondAttribute="trailing" constant="25" id="Fdy-BB-cEi"/>
+                <constraint firstItem="hKr-vI-rda" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="I5a-wd-Z3J"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="amU-XI-BuP" secondAttribute="trailing" constant="25" id="R0C-t5-ECq"/>
+                <constraint firstItem="AiV-NW-LQ9" firstAttribute="centerX" secondItem="hKr-vI-rda" secondAttribute="centerX" id="aUm-0U-w5r"/>
+                <constraint firstItem="amU-XI-BuP" firstAttribute="top" secondItem="fej-Ti-4OR" secondAttribute="bottom" constant="350" id="hZA-hV-mIU"/>
+                <constraint firstItem="amU-XI-BuP" firstAttribute="centerX" secondItem="hKr-vI-rda" secondAttribute="centerX" id="mAa-IQ-X1f"/>
+                <constraint firstItem="fej-Ti-4OR" firstAttribute="centerX" secondItem="hKr-vI-rda" secondAttribute="centerX" id="pm7-KV-WgP"/>
+                <constraint firstItem="wBF-uJ-1Ll" firstAttribute="top" secondItem="fej-Ti-4OR" secondAttribute="bottom" constant="349" id="q0K-Py-cX1"/>
+                <constraint firstItem="amU-XI-BuP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="q8q-vp-Ths"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wBF-uJ-1Ll" secondAttribute="bottom" id="shi-fX-PY1"/>
+                <constraint firstItem="AiV-NW-LQ9" firstAttribute="top" secondItem="hKr-vI-rda" secondAttribute="bottom" constant="20" id="thd-qi-H8z"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="amU-XI-BuP" secondAttribute="bottom" id="wrq-id-uTu"/>
+                <constraint firstItem="fej-Ti-4OR" firstAttribute="top" secondItem="AiV-NW-LQ9" secondAttribute="bottom" constant="20" id="y3s-TI-FBa"/>
+                <constraint firstItem="wBF-uJ-1Ll" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="zRH-ke-o93"/>
+            </constraints>
+            <connections>
+                <outlet property="cityLabel" destination="hKr-vI-rda" id="LnH-1n-OU6"/>
+                <outlet property="hourlyCollectionView" destination="amU-XI-BuP" id="h4m-vj-mkI"/>
+                <outlet property="segmentedControl" destination="BsT-Pv-qhk" id="XEV-nZ-wcc"/>
+                <outlet property="tempLabel" destination="AiV-NW-LQ9" id="r1W-Ct-TyM"/>
+                <outlet property="weatherInfoLabel" destination="fej-Ti-4OR" id="im6-tO-pgc"/>
+                <outlet property="weeklyCollectionView" destination="wBF-uJ-1Ll" id="oLS-VR-Ntq"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="41.517857142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

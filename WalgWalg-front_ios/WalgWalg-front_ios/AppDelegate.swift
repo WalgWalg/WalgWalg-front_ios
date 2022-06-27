@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FSCalendar
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

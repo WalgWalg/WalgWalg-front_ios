@@ -9,23 +9,75 @@
 /* Begin PBXBuildFile section */
 		07150304282A42D8002FB1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07150303282A42D8002FB1C9 /* AppDelegate.swift */; };
 		07150306282A42D8002FB1C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07150305282A42D8002FB1C9 /* SceneDelegate.swift */; };
-		07150308282A42D8002FB1C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07150307282A42D8002FB1C9 /* ViewController.swift */; };
+		07150308282A42D8002FB1C9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07150307282A42D8002FB1C9 /* MainViewController.swift */; };
 		0715030B282A42D8002FB1C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07150309282A42D8002FB1C9 /* Main.storyboard */; };
 		0715030E282A42D8002FB1C9 /* WalgWalg_front_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0715030C282A42D8002FB1C9 /* WalgWalg_front_ios.xcdatamodeld */; };
 		07150310282A42DA002FB1C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0715030F282A42DA002FB1C9 /* Assets.xcassets */; };
 		07150313282A42DA002FB1C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07150311282A42DA002FB1C9 /* LaunchScreen.storyboard */; };
+		0715032328320BE1002FB1C9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715032228320BE1002FB1C9 /* LoginViewController.swift */; };
+		0715032528320BEF002FB1C9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715032428320BEF002FB1C9 /* RegisterViewController.swift */; };
+		0715032728320BFF002FB1C9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715032628320BFF002FB1C9 /* HomeViewController.swift */; };
+		0715032928320C07002FB1C9 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715032828320C07002FB1C9 /* LocationViewController.swift */; };
+		0715032B28320C1A002FB1C9 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715032A28320C1A002FB1C9 /* CommunityViewController.swift */; };
+		0715032D28320C27002FB1C9 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715032C28320C27002FB1C9 /* MypageViewController.swift */; };
+		0739DD0E2858882400C9F963 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739DD0C2858882400C9F963 /* RecommendCollectionViewCell.swift */; };
+		0739DD0F2858882400C9F963 /* RecommendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0739DD0D2858882400C9F963 /* RecommendCollectionViewCell.xib */; };
+		0739DD11285888C100C9F963 /* CommunityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739DD10285888C100C9F963 /* CommunityDataModel.swift */; };
+		07775DB72864D29B00DCDF5A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DB62864D29B00DCDF5A /* WeatherViewController.swift */; };
+		07775DE728655E1200DCDF5A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DE628655E1200DCDF5A /* WeatherView.swift */; };
+		07775DE928655E1D00DCDF5A /* WeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07775DE828655E1D00DCDF5A /* WeatherView.xib */; };
+		07775DEC28655E3B00DCDF5A /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DEA28655E3B00DCDF5A /* HourlyCollectionViewCell.swift */; };
+		07775DED28655E3B00DCDF5A /* HourlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07775DEB28655E3B00DCDF5A /* HourlyCollectionViewCell.xib */; };
+		07775DF028655E5000DCDF5A /* WeeklyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DEE28655E5000DCDF5A /* WeeklyCollectionViewCell.swift */; };
+		07775DF128655E5000DCDF5A /* WeeklyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07775DEF28655E5000DCDF5A /* WeeklyCollectionViewCell.xib */; };
+		07775DF328655E6E00DCDF5A /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DF228655E6E00DCDF5A /* CurrentWeather.swift */; };
+		07775DF528655E7A00DCDF5A /* HourlyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DF428655E7A00DCDF5A /* HourlyWeather.swift */; };
+		07775DF728655E8600DCDF5A /* WeeklyWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DF628655E8600DCDF5A /* WeeklyWeather.swift */; };
+		07775DF928655EA200DCDF5A /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DF828655EA200DCDF5A /* KeyCenter.swift */; };
+		07775DFB28655EAC00DCDF5A /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DFA28655EAC00DCDF5A /* LocationService.swift */; };
+		07775DFE286561C600DCDF5A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DFD286561C600DCDF5A /* Helper.swift */; };
+		078CFF0F2844BC1E004498DF /* HomeStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CFF0E2844BC1E004498DF /* HomeStartViewController.swift */; };
+		07955E02286320D8009E0EDE /* CommunityAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07955E01286320D8009E0EDE /* CommunityAddViewController.swift */; };
+		D5FC114B3A56ED1009F0E5BE /* Pods_WalgWalg_front_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2924F82CDB4611BA16F82A8A /* Pods_WalgWalg_front_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07150300282A42D8002FB1C9 /* WalgWalg-front_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WalgWalg-front_ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07150303282A42D8002FB1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07150305282A42D8002FB1C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		07150307282A42D8002FB1C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07150307282A42D8002FB1C9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0715030A282A42D8002FB1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0715030D282A42D8002FB1C9 /* WalgWalg_front_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WalgWalg_front_ios.xcdatamodel; sourceTree = "<group>"; };
 		0715030F282A42DA002FB1C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07150312282A42DA002FB1C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07150314282A42DA002FB1C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0715032228320BE1002FB1C9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0715032428320BEF002FB1C9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0715032628320BFF002FB1C9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0715032828320C07002FB1C9 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		0715032A28320C1A002FB1C9 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
+		0715032C28320C27002FB1C9 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
+		0739DD0C2858882400C9F963 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
+		0739DD0D2858882400C9F963 /* RecommendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendCollectionViewCell.xib; sourceTree = "<group>"; };
+		0739DD10285888C100C9F963 /* CommunityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDataModel.swift; sourceTree = "<group>"; };
+		07775DB62864D29B00DCDF5A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		07775DE628655E1200DCDF5A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		07775DE828655E1D00DCDF5A /* WeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherView.xib; sourceTree = "<group>"; };
+		07775DEA28655E3B00DCDF5A /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
+		07775DEB28655E3B00DCDF5A /* HourlyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyCollectionViewCell.xib; sourceTree = "<group>"; };
+		07775DEE28655E5000DCDF5A /* WeeklyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionViewCell.swift; sourceTree = "<group>"; };
+		07775DEF28655E5000DCDF5A /* WeeklyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeklyCollectionViewCell.xib; sourceTree = "<group>"; };
+		07775DF228655E6E00DCDF5A /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		07775DF428655E7A00DCDF5A /* HourlyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeather.swift; sourceTree = "<group>"; };
+		07775DF628655E8600DCDF5A /* WeeklyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyWeather.swift; sourceTree = "<group>"; };
+		07775DF828655EA200DCDF5A /* KeyCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
+		07775DFA28655EAC00DCDF5A /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		07775DFD286561C600DCDF5A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		078CFF0E2844BC1E004498DF /* HomeStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStartViewController.swift; sourceTree = "<group>"; };
+		07955E01286320D8009E0EDE /* CommunityAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAddViewController.swift; sourceTree = "<group>"; };
+		14B994B1D61548A0D787B7A7 /* Pods-WalgWalg-front_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalgWalg-front_ios.release.xcconfig"; path = "Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios.release.xcconfig"; sourceTree = "<group>"; };
+		2924F82CDB4611BA16F82A8A /* Pods_WalgWalg_front_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalgWalg_front_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9649A94E4D20A9CAB9142BB /* Pods-WalgWalg-front_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalgWalg-front_ios.debug.xcconfig"; path = "Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5FC114B3A56ED1009F0E5BE /* Pods_WalgWalg_front_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +97,8 @@
 			children = (
 				07150302282A42D8002FB1C9 /* WalgWalg-front_ios */,
 				07150301282A42D8002FB1C9 /* Products */,
+				9019A3F4E3D831A32E53A291 /* Pods */,
+				C476E0F0E67A635CCFFDC6E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,14 +115,103 @@
 			children = (
 				07150303282A42D8002FB1C9 /* AppDelegate.swift */,
 				07150305282A42D8002FB1C9 /* SceneDelegate.swift */,
-				07150307282A42D8002FB1C9 /* ViewController.swift */,
 				07150309282A42D8002FB1C9 /* Main.storyboard */,
 				0715030F282A42DA002FB1C9 /* Assets.xcassets */,
 				07150311282A42DA002FB1C9 /* LaunchScreen.storyboard */,
 				07150314282A42DA002FB1C9 /* Info.plist */,
 				0715030C282A42D8002FB1C9 /* WalgWalg_front_ios.xcdatamodeld */,
+				07775E0428657E1300DCDF5A /* Main */,
+				07775E0128657DCF00DCDF5A /* Communication */,
+				07775E0228657DE600DCDF5A /* Mypage */,
+				07775E0328657DF900DCDF5A /* Location */,
+				07775E0028657DB700DCDF5A /* Home */,
+				07775DFF28657D9A00DCDF5A /* Weather */,
 			);
 			path = "WalgWalg-front_ios";
+			sourceTree = "<group>";
+		};
+		07775DFF28657D9A00DCDF5A /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				07775DB62864D29B00DCDF5A /* WeatherViewController.swift */,
+				07775DE628655E1200DCDF5A /* WeatherView.swift */,
+				07775DE828655E1D00DCDF5A /* WeatherView.xib */,
+				07775DEA28655E3B00DCDF5A /* HourlyCollectionViewCell.swift */,
+				07775DEB28655E3B00DCDF5A /* HourlyCollectionViewCell.xib */,
+				07775DEE28655E5000DCDF5A /* WeeklyCollectionViewCell.swift */,
+				07775DEF28655E5000DCDF5A /* WeeklyCollectionViewCell.xib */,
+				07775DF228655E6E00DCDF5A /* CurrentWeather.swift */,
+				07775DF428655E7A00DCDF5A /* HourlyWeather.swift */,
+				07775DF628655E8600DCDF5A /* WeeklyWeather.swift */,
+				07775DF828655EA200DCDF5A /* KeyCenter.swift */,
+				07775DFA28655EAC00DCDF5A /* LocationService.swift */,
+				07775DFD286561C600DCDF5A /* Helper.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		07775E0028657DB700DCDF5A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0715032628320BFF002FB1C9 /* HomeViewController.swift */,
+				078CFF0E2844BC1E004498DF /* HomeStartViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		07775E0128657DCF00DCDF5A /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				0715032A28320C1A002FB1C9 /* CommunityViewController.swift */,
+				0739DD0C2858882400C9F963 /* RecommendCollectionViewCell.swift */,
+				0739DD0D2858882400C9F963 /* RecommendCollectionViewCell.xib */,
+				0739DD10285888C100C9F963 /* CommunityDataModel.swift */,
+				07955E01286320D8009E0EDE /* CommunityAddViewController.swift */,
+			);
+			path = Communication;
+			sourceTree = "<group>";
+		};
+		07775E0228657DE600DCDF5A /* Mypage */ = {
+			isa = PBXGroup;
+			children = (
+				0715032C28320C27002FB1C9 /* MypageViewController.swift */,
+			);
+			path = Mypage;
+			sourceTree = "<group>";
+		};
+		07775E0328657DF900DCDF5A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				0715032828320C07002FB1C9 /* LocationViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		07775E0428657E1300DCDF5A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				07150307282A42D8002FB1C9 /* MainViewController.swift */,
+				0715032228320BE1002FB1C9 /* LoginViewController.swift */,
+				0715032428320BEF002FB1C9 /* RegisterViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		9019A3F4E3D831A32E53A291 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9649A94E4D20A9CAB9142BB /* Pods-WalgWalg-front_ios.debug.xcconfig */,
+				14B994B1D61548A0D787B7A7 /* Pods-WalgWalg-front_ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C476E0F0E67A635CCFFDC6E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2924F82CDB4611BA16F82A8A /* Pods_WalgWalg_front_ios.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07150317282A42DA002FB1C9 /* Build configuration list for PBXNativeTarget "WalgWalg-front_ios" */;
 			buildPhases = (
+				94067CF1D3708BA99C009875 /* [CP] Check Pods Manifest.lock */,
 				071502FC282A42D8002FB1C9 /* Sources */,
 				071502FD282A42D8002FB1C9 /* Frameworks */,
 				071502FE282A42D8002FB1C9 /* Resources */,
+				96D89FF19B1E55BAB5A563A4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,23 +274,89 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07775DE928655E1D00DCDF5A /* WeatherView.xib in Resources */,
 				07150313282A42DA002FB1C9 /* LaunchScreen.storyboard in Resources */,
+				07775DF128655E5000DCDF5A /* WeeklyCollectionViewCell.xib in Resources */,
+				0739DD0F2858882400C9F963 /* RecommendCollectionViewCell.xib in Resources */,
 				07150310282A42DA002FB1C9 /* Assets.xcassets in Resources */,
 				0715030B282A42D8002FB1C9 /* Main.storyboard in Resources */,
+				07775DED28655E3B00DCDF5A /* HourlyCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		94067CF1D3708BA99C009875 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WalgWalg-front_ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96D89FF19B1E55BAB5A563A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		071502FC282A42D8002FB1C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07150308282A42D8002FB1C9 /* ViewController.swift in Sources */,
+				07150308282A42D8002FB1C9 /* MainViewController.swift in Sources */,
+				07775DB72864D29B00DCDF5A /* WeatherViewController.swift in Sources */,
 				07150304282A42D8002FB1C9 /* AppDelegate.swift in Sources */,
+				0715032B28320C1A002FB1C9 /* CommunityViewController.swift in Sources */,
+				07775DFE286561C600DCDF5A /* Helper.swift in Sources */,
+				07775DF928655EA200DCDF5A /* KeyCenter.swift in Sources */,
 				07150306282A42D8002FB1C9 /* SceneDelegate.swift in Sources */,
+				07775DE728655E1200DCDF5A /* WeatherView.swift in Sources */,
+				0739DD0E2858882400C9F963 /* RecommendCollectionViewCell.swift in Sources */,
+				07775DF528655E7A00DCDF5A /* HourlyWeather.swift in Sources */,
+				0715032528320BEF002FB1C9 /* RegisterViewController.swift in Sources */,
+				07955E02286320D8009E0EDE /* CommunityAddViewController.swift in Sources */,
+				07775DF328655E6E00DCDF5A /* CurrentWeather.swift in Sources */,
+				07775DF028655E5000DCDF5A /* WeeklyCollectionViewCell.swift in Sources */,
+				07775DF728655E8600DCDF5A /* WeeklyWeather.swift in Sources */,
+				0715032D28320C27002FB1C9 /* MypageViewController.swift in Sources */,
+				078CFF0F2844BC1E004498DF /* HomeStartViewController.swift in Sources */,
+				0715032328320BE1002FB1C9 /* LoginViewController.swift in Sources */,
+				0715032728320BFF002FB1C9 /* HomeViewController.swift in Sources */,
 				0715030E282A42D8002FB1C9 /* WalgWalg_front_ios.xcdatamodeld in Sources */,
+				07775DFB28655EAC00DCDF5A /* LocationService.swift in Sources */,
+				0715032928320C07002FB1C9 /* LocationViewController.swift in Sources */,
+				0739DD11285888C100C9F963 /* CommunityDataModel.swift in Sources */,
+				07775DEC28655E3B00DCDF5A /* HourlyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,11 +498,13 @@
 		};
 		07150318282A42DA002FB1C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9649A94E4D20A9CAB9142BB /* Pods-WalgWalg-front_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8NBY6RTGH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WalgWalg-front_ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -313,11 +527,13 @@
 		};
 		07150319282A42DA002FB1C9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14B994B1D61548A0D787B7A7 /* Pods-WalgWalg-front_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M8NBY6RTGH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WalgWalg-front_ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
