@@ -27,7 +27,7 @@ class WeeklyWeather {
         let lon = LocationService.shared.longitude!
         let path = "https://api.weatherbit.io/v2.0/forecast/daily=7?lat=\(lat)&lon=\(lon)&key=\(KeyCenter.key)"
         
-        Alamofire.request(path).responseJSON { (response) in
+        AF.request(path).responseJSON { (response) in
             let result = response.result
             var weeklyWeathers = [WeeklyWeather]()
             

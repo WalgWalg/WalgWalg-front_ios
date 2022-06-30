@@ -8,7 +8,8 @@
 import UIKit
 import FSCalendar
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController{
+    
     
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var weatherBtn: UIButton!
@@ -16,6 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var start_btn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let view = UIView()
         
         view.layer.shadowColor = UIColor.black.cgColor

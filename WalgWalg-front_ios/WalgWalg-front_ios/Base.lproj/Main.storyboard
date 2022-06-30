@@ -470,7 +470,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KHu-w4-Eky">
-                                <rect key="frame" x="25" y="173" width="340" height="357"/>
+                                <rect key="frame" x="25" y="173" width="340" height="120"/>
                                 <color key="backgroundColor" name="FieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="npD-ti-d1Q"/>
@@ -479,7 +479,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dy0-ss-gTz">
-                                <rect key="frame" x="25" y="545" width="340" height="50"/>
+                                <rect key="frame" x="25" y="308" width="340" height="50"/>
                                 <color key="backgroundColor" name="FieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="lRW-6m-SlY"/>
@@ -488,7 +488,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PTv-Co-iri">
-                                <rect key="frame" x="25" y="610" width="340" height="180"/>
+                                <rect key="frame" x="25" y="373" width="340" height="417"/>
                                 <color key="backgroundColor" name="FieldColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="1m8-oe-M7E"/>
@@ -574,24 +574,9 @@
                     <view key="view" contentMode="scaleToFill" id="Sxo-BK-zFr">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="iZw-Bw-Gcm">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                            <view alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IJ-D0-xwQ">
-                                <rect key="frame" x="33.1708475221144" y="575" width="320.99999999999955" height="269"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" name="FieldColor"/>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MdF-lg-upt"/>
                         <color key="backgroundColor" name="FieldColor"/>
                     </view>
-                    <connections>
-                        <outlet property="recommandView" destination="0IJ-D0-xwQ" id="xuZ-A5-ePd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vw-ml-LKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -733,7 +718,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer." value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Jke-JY-MWl" kind="presentation" id="uff-UR-3Ol"/>
+                                    <segue destination="Jke-JY-MWl" kind="presentation" id="1cP-wt-GoF"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mj-xN-prx" customClass="FSCalendar">
@@ -848,6 +833,19 @@
                     <view key="view" contentMode="scaleToFill" id="29e-2j-btn">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cU-HR-d7S">
+                                <rect key="frame" x="29" y="44" width="43" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="4zj-eS-lWD" kind="presentation" id="uqM-Ko-cW3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uOK-qY-Ojx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -877,6 +875,10 @@
             <point key="canvasLocation" x="1300" y="93"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Tgp-Q6-X0n"/>
+        <segue reference="uqM-Ko-cW3"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
         <image name="icon_kcal" width="24.666666030883789" height="30.666666030883789"/>

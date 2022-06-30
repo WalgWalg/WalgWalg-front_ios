@@ -7,6 +7,7 @@
 
 import Alamofire
 import SwiftyJSON
+import Foundation
 
 class HourlyWeather {
     
@@ -28,7 +29,7 @@ class HourlyWeather {
         
         let path = "https://api.weatherbit.io/v2.0/forecast/hourly?lat=\(lat)&lon=\(lon)&key=\(KeyCenter.key)"
         
-        Alamofire.request(path).responseJSON { (response) in
+        AF.request(path).responseJSON { (response) in
             let result = response.result
             var hourlyWeathers = [HourlyWeather]()
             

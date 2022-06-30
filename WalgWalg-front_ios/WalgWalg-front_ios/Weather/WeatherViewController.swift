@@ -3,22 +3,19 @@
 //  WalgWalg-front_ios
 //
 //  Created by 강보현 on 2022/05/30.
-//
 
 import UIKit
 import CoreLocation
 import MapKit
 import Alamofire
-import SwiftyJSON
 
 class WeatherViewController: UIViewController{
     var temperature: Double = 0.0
     var icon: String = ""
+    
     var locationManager:CLLocationManager?
     var currentLocation:CLLocationCoordinate2D!
-    var latitude: Double?
-    var longitude: Double?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         requestAuthorization()
@@ -35,6 +32,7 @@ class WeatherViewController: UIViewController{
             locationManager!.delegate = self
             locationManagerDidChangeAuthorization(locationManager!)
         }else{
+            print("authorization")
             //사용자의 위치가 바뀌고 있는지 확인하는 메소드
             locationManager!.startMonitoringSignificantLocationChanges()
         }
@@ -74,8 +72,12 @@ class WeatherViewController: UIViewController{
 
 extension WeatherViewController:CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        if manager.authorizationStatus == .authorizedWhenInUse {
+        if manager.authorizationStatus == .authorizedWhenInUse || manager.authorizationStatus == .authorizedAlways {
             currentLocation = locationManager!.location?.coordinate
+            print("current : \(String(describing: currentLocation))")
+            print("current : \(currentLocation.latitude)")
+            print("current : \(currentLocation.longitude)")
+
             LocationService.shared.longitude = currentLocation.longitude
             LocationService.shared.latitude = currentLocation.latitude
             print(LocationService.shared.latitude as Any)

@@ -38,6 +38,11 @@
 		07775DFE286561C600DCDF5A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DFD286561C600DCDF5A /* Helper.swift */; };
 		078CFF0F2844BC1E004498DF /* HomeStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078CFF0E2844BC1E004498DF /* HomeStartViewController.swift */; };
 		07955E02286320D8009E0EDE /* CommunityAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07955E01286320D8009E0EDE /* CommunityAddViewController.swift */; };
+		07E6CBA7286C020400B4CEC6 /* ParkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6CBA5286C020400B4CEC6 /* ParkCollectionViewCell.swift */; };
+		07E6CBA8286C020400B4CEC6 /* ParkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6CBA6286C020400B4CEC6 /* ParkCollectionViewCell.xib */; };
+		07E6CBAA286C024600B4CEC6 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6CBA9286C024600B4CEC6 /* Park.swift */; };
+		07E6CBB2286C8B3000B4CEC6 /* WalkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6CBB1286C8B3000B4CEC6 /* WalkView.swift */; };
+		07E6CBB4286C8B3A00B4CEC6 /* WalkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6CBB3286C8B3A00B4CEC6 /* WalkView.xib */; };
 		D5FC114B3A56ED1009F0E5BE /* Pods_WalgWalg_front_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2924F82CDB4611BA16F82A8A /* Pods_WalgWalg_front_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +80,11 @@
 		07775DFD286561C600DCDF5A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		078CFF0E2844BC1E004498DF /* HomeStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStartViewController.swift; sourceTree = "<group>"; };
 		07955E01286320D8009E0EDE /* CommunityAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityAddViewController.swift; sourceTree = "<group>"; };
+		07E6CBA5286C020400B4CEC6 /* ParkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkCollectionViewCell.swift; sourceTree = "<group>"; };
+		07E6CBA6286C020400B4CEC6 /* ParkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkCollectionViewCell.xib; sourceTree = "<group>"; };
+		07E6CBA9286C024600B4CEC6 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
+		07E6CBB1286C8B3000B4CEC6 /* WalkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkView.swift; sourceTree = "<group>"; };
+		07E6CBB3286C8B3A00B4CEC6 /* WalkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalkView.xib; sourceTree = "<group>"; };
 		14B994B1D61548A0D787B7A7 /* Pods-WalgWalg-front_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalgWalg-front_ios.release.xcconfig"; path = "Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios.release.xcconfig"; sourceTree = "<group>"; };
 		2924F82CDB4611BA16F82A8A /* Pods_WalgWalg_front_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalgWalg_front_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9649A94E4D20A9CAB9142BB /* Pods-WalgWalg-front_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalgWalg-front_ios.debug.xcconfig"; path = "Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +165,11 @@
 			children = (
 				0715032628320BFF002FB1C9 /* HomeViewController.swift */,
 				078CFF0E2844BC1E004498DF /* HomeStartViewController.swift */,
+				07E6CBA5286C020400B4CEC6 /* ParkCollectionViewCell.swift */,
+				07E6CBA6286C020400B4CEC6 /* ParkCollectionViewCell.xib */,
+				07E6CBA9286C024600B4CEC6 /* Park.swift */,
+				07E6CBB1286C8B3000B4CEC6 /* WalkView.swift */,
+				07E6CBB3286C8B3A00B4CEC6 /* WalkView.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -226,6 +241,7 @@
 				071502FD282A42D8002FB1C9 /* Frameworks */,
 				071502FE282A42D8002FB1C9 /* Resources */,
 				96D89FF19B1E55BAB5A563A4 /* [CP] Embed Pods Frameworks */,
+				C58D614E45D6221831ADB0DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -274,12 +290,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E6CBA8286C020400B4CEC6 /* ParkCollectionViewCell.xib in Resources */,
 				07775DE928655E1D00DCDF5A /* WeatherView.xib in Resources */,
 				07150313282A42DA002FB1C9 /* LaunchScreen.storyboard in Resources */,
 				07775DF128655E5000DCDF5A /* WeeklyCollectionViewCell.xib in Resources */,
 				0739DD0F2858882400C9F963 /* RecommendCollectionViewCell.xib in Resources */,
 				07150310282A42DA002FB1C9 /* Assets.xcassets in Resources */,
 				0715030B282A42D8002FB1C9 /* Main.storyboard in Resources */,
+				07E6CBB4286C8B3A00B4CEC6 /* WalkView.xib in Resources */,
 				07775DED28655E3B00DCDF5A /* HourlyCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +344,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C58D614E45D6221831ADB0DB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WalgWalg-front_ios/Pods-WalgWalg-front_ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -340,6 +375,7 @@
 				07775DFE286561C600DCDF5A /* Helper.swift in Sources */,
 				07775DF928655EA200DCDF5A /* KeyCenter.swift in Sources */,
 				07150306282A42D8002FB1C9 /* SceneDelegate.swift in Sources */,
+				07E6CBAA286C024600B4CEC6 /* Park.swift in Sources */,
 				07775DE728655E1200DCDF5A /* WeatherView.swift in Sources */,
 				0739DD0E2858882400C9F963 /* RecommendCollectionViewCell.swift in Sources */,
 				07775DF528655E7A00DCDF5A /* HourlyWeather.swift in Sources */,
@@ -353,9 +389,11 @@
 				0715032328320BE1002FB1C9 /* LoginViewController.swift in Sources */,
 				0715032728320BFF002FB1C9 /* HomeViewController.swift in Sources */,
 				0715030E282A42D8002FB1C9 /* WalgWalg_front_ios.xcdatamodeld in Sources */,
+				07E6CBA7286C020400B4CEC6 /* ParkCollectionViewCell.swift in Sources */,
 				07775DFB28655EAC00DCDF5A /* LocationService.swift in Sources */,
 				0715032928320C07002FB1C9 /* LocationViewController.swift in Sources */,
 				0739DD11285888C100C9F963 /* CommunityDataModel.swift in Sources */,
+				07E6CBB2286C8B3000B4CEC6 /* WalkView.swift in Sources */,
 				07775DEC28655E3B00DCDF5A /* HourlyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

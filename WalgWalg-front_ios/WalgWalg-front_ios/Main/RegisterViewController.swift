@@ -81,7 +81,7 @@ class RegisterViewController: UIViewController {
                 print("http Body Error")
             }
 
-            Alamofire.request(request).responseString { (response) in
+            AF.request(request).responseString { (response) in
 
                 switch response.result {
                 case .success:

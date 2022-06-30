@@ -24,7 +24,7 @@ class CurrentWeather {
         let path = "https://api.weatherbit.io/v2.0/current?lat=\(lat)&lon=\(lon)&key=\(KeyCenter.key)&include=minutely"
         
         //Swift5부터 AF로 바뀜.
-        Alamofire.request(path).responseJSON { (response) in
+        AF.request(path).responseJSON { (response) in
             let result = response.result
             switch result {
             case .success(let value as [String: Any]):
