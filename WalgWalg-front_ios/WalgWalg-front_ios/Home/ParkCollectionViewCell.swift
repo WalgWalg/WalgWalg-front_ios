@@ -7,11 +7,19 @@
 
 import UIKit
 
+protocol ComponentProductCellDelegate {
+    func selectedInfoBtn(index: Int)
+}
+
 class ParkCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var parkAddressLB: UILabel!
     @IBOutlet weak var parkNameLB: UILabel!
+    
+    var index: Int = 0
+    var delegate: ComponentProductCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,7 +39,12 @@ class ParkCollectionViewCell: UICollectionViewCell {
         
     }
     
-    @IBAction func startBtn(_ sender: Any){
-        // 공원 start버튼 누르면 end 버튼 나오는 view 바꿔야함
+    @IBAction func selectedInfoBtn(_ sender: Any) {
+        self.delegate?.selectedInfoBtn(index: index)
+        print("selected cell 2 : \(index)")
+
     }
+
+
+
 }

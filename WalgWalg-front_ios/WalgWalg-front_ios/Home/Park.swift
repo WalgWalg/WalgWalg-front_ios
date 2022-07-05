@@ -8,13 +8,14 @@
 import Foundation
 import SwiftyJSON
 import Alamofire
+import CoreLocation
 
 class Park{
-    
     var address:String = ""
     var parkName:String = ""
     var lat:Double = 0.0
     var lon:Double = 0.0
+    var currentAddress : [String] = []
     
     init(parkDictionary:Dictionary<String,Any>) {
         let data = JSON(parkDictionary)
@@ -24,12 +25,18 @@ class Park{
         self.lon = data["longitude"].double ?? 0.0
     }
     
-    
     class func getParkInfo(completion:@escaping([Park]) -> Void) {
-        let path = "http://ec2-15-165-129-147.ap-northeast-2.compute.amazonaws.com:8080/park"
+        let address = LocationService.shared.stringAddress
         
+        print("getParkInfo 2 : \(address ?? "경기도 용인시 기흥구")")
+        
+        let path = "http://ec2-15-165-129-147.ap-northeast-2.compute.amazonaws.com:8080/park/경기도 용인시 기흥구"
+        guard let encodedStr = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+
+        let url = URL(string: encodedStr)!
+        // URL 특수문자로 인한 인코딩
         let header : HTTPHeaders = ["Content-Type": "application/json"]
-        AF.request(path,method: .get,
+        AF.request(url,method: .get,
                    parameters: nil,
                    encoding: URLEncoding.default,
                    headers: header)
@@ -60,7 +67,5 @@ class Park{
             }
             //여기서 가져온 데이터를 자유롭게 활용하세요.
         }
-        
     }
-    
 }
