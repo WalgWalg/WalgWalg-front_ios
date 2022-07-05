@@ -43,6 +43,8 @@
 		07BC8EB928731AF80012D1A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BC8EB828731AF80012D1A1 /* MapKit.framework */; };
 		07BC8EBB287334810012D1A1 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BC8EBA287334810012D1A1 /* HealthKit.framework */; };
 		07BC8EF428733C440012D1A1 /* LocationConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BC8EF328733C440012D1A1 /* LocationConverter.swift */; };
+		07BC8EF72874A37C0012D1A1 /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BC8EF52874A37C0012D1A1 /* FavoriteCollectionViewCell.swift */; };
+		07BC8EF82874A37C0012D1A1 /* FavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BC8EF62874A37C0012D1A1 /* FavoriteCollectionViewCell.xib */; };
 		07E6CBA7286C020400B4CEC6 /* ParkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6CBA5286C020400B4CEC6 /* ParkCollectionViewCell.swift */; };
 		07E6CBA8286C020400B4CEC6 /* ParkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6CBA6286C020400B4CEC6 /* ParkCollectionViewCell.xib */; };
 		07E6CBAA286C024600B4CEC6 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6CBA9286C024600B4CEC6 /* Park.swift */; };
@@ -92,6 +94,8 @@
 		07BC8EBA287334810012D1A1 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		07BC8EF02873354D0012D1A1 /* WalgWalg-front_ios copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WalgWalg-front_ios copy-Info.plist"; path = "/Users/bhyn/Desktop/bhyn/WalgWalg-front_ios/WalgWalg-front_ios/WalgWalg-front_ios copy-Info.plist"; sourceTree = "<absolute>"; };
 		07BC8EF328733C440012D1A1 /* LocationConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConverter.swift; sourceTree = "<group>"; };
+		07BC8EF52874A37C0012D1A1 /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		07BC8EF62874A37C0012D1A1 /* FavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
 		07E6CBA5286C020400B4CEC6 /* ParkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkCollectionViewCell.swift; sourceTree = "<group>"; };
 		07E6CBA6286C020400B4CEC6 /* ParkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkCollectionViewCell.xib; sourceTree = "<group>"; };
 		07E6CBA9286C024600B4CEC6 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 				0739DD0D2858882400C9F963 /* RecommendCollectionViewCell.xib */,
 				0739DD10285888C100C9F963 /* CommunityDataModel.swift */,
 				07955E01286320D8009E0EDE /* CommunityAddViewController.swift */,
+				07BC8EF52874A37C0012D1A1 /* FavoriteCollectionViewCell.swift */,
+				07BC8EF62874A37C0012D1A1 /* FavoriteCollectionViewCell.xib */,
 			);
 			path = Communication;
 			sourceTree = "<group>";
@@ -314,6 +320,7 @@
 				07775DE928655E1D00DCDF5A /* WeatherView.xib in Resources */,
 				07150313282A42DA002FB1C9 /* LaunchScreen.storyboard in Resources */,
 				07775DF128655E5000DCDF5A /* WeeklyCollectionViewCell.xib in Resources */,
+				07BC8EF82874A37C0012D1A1 /* FavoriteCollectionViewCell.xib in Resources */,
 				0739DD0F2858882400C9F963 /* RecommendCollectionViewCell.xib in Resources */,
 				07150310282A42DA002FB1C9 /* Assets.xcassets in Resources */,
 				0715030B282A42D8002FB1C9 /* Main.storyboard in Resources */,
@@ -399,6 +406,7 @@
 				07775DFB28655EAC00DCDF5A /* LocationService.swift in Sources */,
 				0715032928320C07002FB1C9 /* LocationViewController.swift in Sources */,
 				0739DD11285888C100C9F963 /* CommunityDataModel.swift in Sources */,
+				07BC8EF72874A37C0012D1A1 /* FavoriteCollectionViewCell.swift in Sources */,
 				07E6CBB2286C8B3000B4CEC6 /* WalkView.swift in Sources */,
 				07775DEC28655E3B00DCDF5A /* HourlyCollectionViewCell.swift in Sources */,
 			);

@@ -8,8 +8,9 @@
 import UIKit
 import MapKit
 import CoreLocation
-class WalkView: UIView, ComponentProductCellDelegate {
+import CoreMotion
 
+class WalkView: UIView, ComponentProductCellDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var MapView: MKMapView!
     @IBOutlet weak var ParkViewBtn: UIButton!
@@ -20,7 +21,6 @@ class WalkView: UIView, ComponentProductCellDelegate {
     @IBOutlet weak var WalkEndViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var ParkCollectionView: UICollectionView!
     
-    
     @IBOutlet weak var TimeIV: UIImageView!
     @IBOutlet weak var KcalIV: UIImageView!
     @IBOutlet weak var KmIV: UIImageView!
@@ -29,6 +29,10 @@ class WalkView: UIView, ComponentProductCellDelegate {
     @IBOutlet weak var KmLabel: UILabel!
     @IBOutlet weak var KcalLabel: UILabel!
     @IBOutlet weak var TimeLabel: UILabel!
+
+    var mTimer : Timer?
+    var number : Int = 0
+    var previousCoordinate: CLLocationCoordinate2D?
     
     var parks:[Park] = []
     
@@ -40,40 +44,48 @@ class WalkView: UIView, ComponentProductCellDelegate {
         WalkEndView.visib = .visible
         ParkCollectionView.visib = .invisible
         
-        // EndView 띄우기 완료.
-        self.KmIV.image = UIImage(systemName: "icon_location")
-        self.KcalIV.image = UIImage(systemName: "icon_kcal")
-        TimeIV.image = UIImage(systemName: "icon_time")
-        WalkCountIV.image = UIImage(systemName: "logo")
         // 초기화 후 데이터 불러오기
         setData()
-        
+        //walking start
+        startWalking()
     }
     
     func setData() {
         // WalkEndView 값 셋팅
-//        self.WalkCountLabel.text = "\(HealthService.shared.StepCount)"
-        self.WalkCountLabel.text = "12345"
-
-        self.KmLabel.text = "\(HealthService.shared.Distance)"
-        self.KcalLabel.text = "\(HealthService.shared.Kcal)"
+//        self.KmIV.image = UIImage(systemName: "icon_location")
+//        
+//        self.KcalIV.image = UIImage(systemName: "icon_kcal")
+//        TimeIV.image = UIImage(systemName: "icon_time")
+//        WalkCountIV.image = UIImage(systemName: "logo")
+        self.WalkCountLabel.text = "0"
+        self.KmLabel.text = "0"
+        self.KcalLabel.text = "0"
         self.TimeLabel.text = "00:00"
-        
     }
     
-   
+    func startWalking(){
+        // 걷기 시작
+//        self.WalkCountLabel.text = "\(HealthService.shared.StepCount)"
+//        self.KmLabel.text = "\(HealthService.shared.Distance)"
+//        self.KcalLabel.text = "\(HealthService.shared.Kcal)"
+//        self.TimeLabel.text = "\(HealthService.shared.Time)"
+    }
+    
     func setupPark() {
-//        WalkEndViewConstraint.constant = 800
+        //        WalkEndViewConstraint.constant = 800
         WalkEndView.visib = .invisible
         print("setup Park in walkView")
         ParkCollectionView.register(UINib(nibName: "ParkCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "ParkCollectionViewCell")
         ParkCollectionView.dataSource = self
         ParkCollectionView.delegate = self
-        
     }
     
     @IBAction func WalkEndBtn(_ sender: Any) {
+        // 산책 끝, 서버에 올려야함
         
+        print("walk end step : \(HealthService.shared.StepCount)")
+        print("walk end distance : \(HealthService.shared.Distance)")
+
     }
     
     @IBAction func WalkViewBtn(_ sender: Any) {
@@ -117,6 +129,25 @@ extension WalkView:UICollectionViewDelegate,UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.ParkCollectionView.bounds.width * 0.7, height: self.ParkCollectionView.bounds.height/1.5)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last
+        else {return}
+        let latitude = location.coordinate.latitude
+        let longitude = location.coordinate.longitude
+        
+        if let previousCoordinate = self.previousCoordinate {
+            var points: [CLLocationCoordinate2D] = []
+            let point1 = CLLocationCoordinate2DMake(previousCoordinate.latitude, previousCoordinate.longitude)
+            let point2: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+            points.append(point1)
+            points.append(point2)
+            
+            let lineDraw = MKPolyline(coordinates: points, count:points.count)
+            MapView.addOverlay(lineDraw)
+        }
+        self.previousCoordinate = location.coordinate
     }
 }
 
@@ -164,4 +195,21 @@ extension UIView {
             }
         }
     }
+}
+
+
+extension HomeStartViewController:MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        if let routePolyline = overlay as? MKPolyline {
+            let renderer = MKPolylineRenderer(polyline: routePolyline)
+            renderer.strokeColor = UIColor.systemYellow.withAlphaComponent(0.9)
+            renderer.lineWidth = 7
+            return renderer
+        }
+        
+        return MKOverlayRenderer()
+    }
+    
 }
