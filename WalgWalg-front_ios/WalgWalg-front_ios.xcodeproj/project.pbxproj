@@ -20,8 +20,11 @@
 		0715032928320C07002FB1C9 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715032828320C07002FB1C9 /* LocationViewController.swift */; };
 		0715032B28320C1A002FB1C9 /* CommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715032A28320C1A002FB1C9 /* CommunityViewController.swift */; };
 		0715032D28320C27002FB1C9 /* MypageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0715032C28320C27002FB1C9 /* MypageViewController.swift */; };
-		0739DD0E2858882400C9F963 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739DD0C2858882400C9F963 /* RecommendCollectionViewCell.swift */; };
-		0739DD0F2858882400C9F963 /* RecommendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0739DD0D2858882400C9F963 /* RecommendCollectionViewCell.xib */; };
+		072EAF392874B12D00406C07 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EAF382874B12D00406C07 /* LoginService.swift */; };
+		072EAF3B2874B9B000406C07 /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EAF3A2874B9AF00406C07 /* UserInfoService.swift */; };
+		072EAF3E2874C2B600406C07 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072EAF3D2874C2B600406C07 /* Post.swift */; };
+		0739DD0E2858882400C9F963 /* CommunityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739DD0C2858882400C9F963 /* CommunityCollectionViewCell.swift */; };
+		0739DD0F2858882400C9F963 /* CommunityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0739DD0D2858882400C9F963 /* CommunityCollectionViewCell.xib */; };
 		0739DD11285888C100C9F963 /* CommunityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0739DD10285888C100C9F963 /* CommunityDataModel.swift */; };
 		07775DB72864D29B00DCDF5A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DB62864D29B00DCDF5A /* WeatherViewController.swift */; };
 		07775DE728655E1200DCDF5A /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07775DE628655E1200DCDF5A /* WeatherView.swift */; };
@@ -69,8 +72,11 @@
 		0715032828320C07002FB1C9 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		0715032A28320C1A002FB1C9 /* CommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityViewController.swift; sourceTree = "<group>"; };
 		0715032C28320C27002FB1C9 /* MypageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageViewController.swift; sourceTree = "<group>"; };
-		0739DD0C2858882400C9F963 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
-		0739DD0D2858882400C9F963 /* RecommendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendCollectionViewCell.xib; sourceTree = "<group>"; };
+		072EAF382874B12D00406C07 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		072EAF3A2874B9AF00406C07 /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
+		072EAF3D2874C2B600406C07 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0739DD0C2858882400C9F963 /* CommunityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCollectionViewCell.swift; sourceTree = "<group>"; };
+		0739DD0D2858882400C9F963 /* CommunityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunityCollectionViewCell.xib; sourceTree = "<group>"; };
 		0739DD10285888C100C9F963 /* CommunityDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDataModel.swift; sourceTree = "<group>"; };
 		07775DB62864D29B00DCDF5A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		07775DE628655E1200DCDF5A /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -156,8 +162,20 @@
 				07775E0328657DF900DCDF5A /* Location */,
 				07775E0028657DB700DCDF5A /* Home */,
 				07775DFF28657D9A00DCDF5A /* Weather */,
+				072EAF3C2874BA1C00406C07 /* Service */,
 			);
 			path = "WalgWalg-front_ios";
+			sourceTree = "<group>";
+		};
+		072EAF3C2874BA1C00406C07 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				07BC8EB52873123B0012D1A1 /* HealthService.swift */,
+				07775DFA28655EAC00DCDF5A /* LocationService.swift */,
+				072EAF382874B12D00406C07 /* LoginService.swift */,
+				072EAF3A2874B9AF00406C07 /* UserInfoService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		07775DFF28657D9A00DCDF5A /* Weather */ = {
@@ -174,7 +192,6 @@
 				07775DF428655E7A00DCDF5A /* HourlyWeather.swift */,
 				07775DF628655E8600DCDF5A /* WeeklyWeather.swift */,
 				07775DF828655EA200DCDF5A /* KeyCenter.swift */,
-				07775DFA28655EAC00DCDF5A /* LocationService.swift */,
 				07775DFD286561C600DCDF5A /* Helper.swift */,
 			);
 			path = Weather;
@@ -191,7 +208,6 @@
 				07E6CBB1286C8B3000B4CEC6 /* WalkView.swift */,
 				07E6CBB3286C8B3A00B4CEC6 /* WalkView.xib */,
 				07BC8EB12872D7AB0012D1A1 /* WalkEndView.swift */,
-				07BC8EB52873123B0012D1A1 /* HealthService.swift */,
 				07BC8EF328733C440012D1A1 /* LocationConverter.swift */,
 			);
 			path = Home;
@@ -201,12 +217,13 @@
 			isa = PBXGroup;
 			children = (
 				0715032A28320C1A002FB1C9 /* CommunityViewController.swift */,
-				0739DD0C2858882400C9F963 /* RecommendCollectionViewCell.swift */,
-				0739DD0D2858882400C9F963 /* RecommendCollectionViewCell.xib */,
+				0739DD0C2858882400C9F963 /* CommunityCollectionViewCell.swift */,
+				0739DD0D2858882400C9F963 /* CommunityCollectionViewCell.xib */,
 				0739DD10285888C100C9F963 /* CommunityDataModel.swift */,
 				07955E01286320D8009E0EDE /* CommunityAddViewController.swift */,
 				07BC8EF52874A37C0012D1A1 /* FavoriteCollectionViewCell.swift */,
 				07BC8EF62874A37C0012D1A1 /* FavoriteCollectionViewCell.xib */,
+				072EAF3D2874C2B600406C07 /* Post.swift */,
 			);
 			path = Communication;
 			sourceTree = "<group>";
@@ -321,7 +338,7 @@
 				07150313282A42DA002FB1C9 /* LaunchScreen.storyboard in Resources */,
 				07775DF128655E5000DCDF5A /* WeeklyCollectionViewCell.xib in Resources */,
 				07BC8EF82874A37C0012D1A1 /* FavoriteCollectionViewCell.xib in Resources */,
-				0739DD0F2858882400C9F963 /* RecommendCollectionViewCell.xib in Resources */,
+				0739DD0F2858882400C9F963 /* CommunityCollectionViewCell.xib in Resources */,
 				07150310282A42DA002FB1C9 /* Assets.xcassets in Resources */,
 				0715030B282A42D8002FB1C9 /* Main.storyboard in Resources */,
 				07E6CBB4286C8B3A00B4CEC6 /* WalkView.xib in Resources */,
@@ -389,7 +406,7 @@
 				07150306282A42D8002FB1C9 /* SceneDelegate.swift in Sources */,
 				07E6CBAA286C024600B4CEC6 /* Park.swift in Sources */,
 				07775DE728655E1200DCDF5A /* WeatherView.swift in Sources */,
-				0739DD0E2858882400C9F963 /* RecommendCollectionViewCell.swift in Sources */,
+				0739DD0E2858882400C9F963 /* CommunityCollectionViewCell.swift in Sources */,
 				07775DF528655E7A00DCDF5A /* HourlyWeather.swift in Sources */,
 				0715032528320BEF002FB1C9 /* RegisterViewController.swift in Sources */,
 				07955E02286320D8009E0EDE /* CommunityAddViewController.swift in Sources */,
@@ -399,14 +416,17 @@
 				0715032D28320C27002FB1C9 /* MypageViewController.swift in Sources */,
 				078CFF0F2844BC1E004498DF /* HomeStartViewController.swift in Sources */,
 				0715032328320BE1002FB1C9 /* LoginViewController.swift in Sources */,
+				072EAF3E2874C2B600406C07 /* Post.swift in Sources */,
 				0715032728320BFF002FB1C9 /* HomeViewController.swift in Sources */,
 				0715030E282A42D8002FB1C9 /* WalgWalg_front_ios.xcdatamodeld in Sources */,
+				072EAF392874B12D00406C07 /* LoginService.swift in Sources */,
 				07E6CBA7286C020400B4CEC6 /* ParkCollectionViewCell.swift in Sources */,
 				07BC8EB62873123B0012D1A1 /* HealthService.swift in Sources */,
 				07775DFB28655EAC00DCDF5A /* LocationService.swift in Sources */,
 				0715032928320C07002FB1C9 /* LocationViewController.swift in Sources */,
 				0739DD11285888C100C9F963 /* CommunityDataModel.swift in Sources */,
 				07BC8EF72874A37C0012D1A1 /* FavoriteCollectionViewCell.swift in Sources */,
+				072EAF3B2874B9B000406C07 /* UserInfoService.swift in Sources */,
 				07E6CBB2286C8B3000B4CEC6 /* WalkView.swift in Sources */,
 				07775DEC28655E3B00DCDF5A /* HourlyCollectionViewCell.swift in Sources */,
 			);
