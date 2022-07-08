@@ -24,8 +24,17 @@ class CommunityCollectionViewCell: UICollectionViewCell {
         print("generate Post Cell")
         DateLB.text = "\(post.date)"
         TitleLB.text = "\(post.title)"
-        
-        
-        
+        // post.img --> Sting 형
+        // 이미지 띄우기
+        if let url = URL(string: post.img) {
+            URLSession.shared.dataTask(with: url) { [weak self] data, _, _ in
+                if let data = data {
+                    DispatchQueue.main.async {
+                        self?.mapIV.image = UIImage(data: data)
+                    }
+                }
+            }.resume()
+        }
     }
 }
+    

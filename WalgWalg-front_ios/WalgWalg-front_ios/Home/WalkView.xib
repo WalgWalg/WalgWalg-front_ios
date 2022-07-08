@@ -42,7 +42,7 @@
                         <action selector="parkViewBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="7Qm-Gr-0JS"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" restorationIdentifier="WalkEndView" translatesAutoresizingMaskIntoConstraints="NO" id="59f-IQ-AXQ" customClass="WalkEndView" customModule="WalgWalg_front_ios" customModuleProvider="target">
+                <view contentMode="scaleToFill" restorationIdentifier="WalkEndView" translatesAutoresizingMaskIntoConstraints="NO" id="59f-IQ-AXQ" customClass="WalkEnd">
                     <rect key="frame" x="25" y="574" width="364" height="322"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaS-zF-hTc">
@@ -233,7 +233,7 @@
                 <outlet property="WalkCountIV" destination="e6T-FC-1B7" id="FaP-3G-xvn"/>
                 <outlet property="WalkCountLabel" destination="jWj-PS-Juc" id="n7g-Lv-FC3"/>
                 <outlet property="WalkEndBtn" destination="KRA-n7-rr6" id="bTf-MX-ru9"/>
-                <outlet property="WalkEndView" destination="59f-IQ-AXQ" id="hx6-pM-e1K"/>
+                <outlet property="WalkEndView" destination="59f-IQ-AXQ" id="LzW-Dl-xKb"/>
                 <outlet property="WalkEndViewConstraint" destination="gJ4-rW-PSN" id="4yH-ST-foz"/>
                 <outlet property="parkViewConstraint" destination="YZG-G4-42B" id="0ET-WE-TIF"/>
             </connections>

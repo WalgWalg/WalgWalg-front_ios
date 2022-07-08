@@ -15,7 +15,7 @@ class WalkView: UIView, ComponentProductCellDelegate, MKMapViewDelegate {
     @IBOutlet weak var MapView: MKMapView!
     @IBOutlet weak var ParkViewBtn: UIButton!
     
-    @IBOutlet weak var WalkEndView: WalkEndView!
+    @IBOutlet weak var WalkEndView: UIView!
     @IBOutlet weak var WalkEndBtn: UIButton!
     @IBOutlet weak var parkViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var WalkEndViewConstraint: NSLayoutConstraint!

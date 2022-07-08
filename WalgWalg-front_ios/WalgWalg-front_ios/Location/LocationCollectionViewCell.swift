@@ -1,13 +1,13 @@
 //
-//  FavoriteCollectionViewCell.swift
+//  LocationCollectionViewCell.swift
 //  WalgWalg-front_ios
 //
-//  Created by 강보현 on 2022/07/06.
+//  Created by 강보현 on 2022/07/08.
 //
 
 import UIKit
 
-class FavoriteCollectionViewCell: UICollectionViewCell {
+class LocationCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

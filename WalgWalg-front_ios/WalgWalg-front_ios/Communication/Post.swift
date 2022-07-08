@@ -17,27 +17,32 @@ class Post{
     var hashTags : [String] = []
     var course : String = ""
     var likes : Int = 0
+    var img : String = ""
     
     init(postDictionary:Dictionary<String,Any>) {
         let data = JSON(postDictionary)
         self.title = data["title"].stringValue
         self.contents = data["contents"].stringValue
-        //        self.hashTags = data["hashTags"].stringValue
+//        self.hashTags = data["hashTags"].stringValue
         self.course = data["course"].stringValue
         self.likes = data["likes"].intValue
+        print("post boardId : \(data["boardId"].stringValue)")
+        self.img = data["course"].stringValue
+        
     }
     
     class func getPostInfo(completion:@escaping([Post]) -> Void) {
         let address = LocationService.shared.stringAddress
         
         print("getParkInfo 2 : \(address ?? "경기도 용인시 기흥구")")
-        
+        print("getParkInfo 2 : \(LocationService.shared.stringAddress)")
         let path = "http://ec2-15-165-129-147.ap-northeast-2.compute.amazonaws.com:8080/board/region/경기도 용인시 기흥구"
         guard let encodedStr = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         
         let url = URL(string: encodedStr)!
         // URL 특수문자로 인한 인코딩
-        let header : HTTPHeaders = ["Content-Type": "application/json"]
+        let header : HTTPHeaders = ["Content-Type": "application/json", "x-auth-token": LoginService.shared.accessToken!]
+        
         AF.request(url,method: .get,
                    parameters: nil,
                    encoding: URLEncoding.default,
@@ -57,6 +62,7 @@ class Post{
                     data.forEach{
                         posts.append(Post(postDictionary: $0))
                     }
+                    
                 }
                 print("print posts: \(posts.count)")
                 completion(posts)

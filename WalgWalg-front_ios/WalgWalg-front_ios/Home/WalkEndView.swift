@@ -2,11 +2,11 @@
 //  WalkEndView.swift
 //  WalgWalg-front_ios
 //
-//  Created by 강보현 on 2022/07/04.
+//  Created by 강보현 on 2022/07/08.
 //
 
-import UIKit
+import Foundation
 
-class WalkEndView: UIView {
+class WalkEndView{
     
 }

@@ -18,6 +18,7 @@ class CommunityAddViewController: UIViewController {
     @IBOutlet weak var TFLocation: UITextField!
     @IBOutlet weak var TFContent: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,9 +46,14 @@ class CommunityAddViewController: UIViewController {
         var request = URLRequest(url: url!)
         
         request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(LoginService.shared.accessToken!, forHTTPHeaderField: "x-auth-token")
-
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue(LoginService.shared.accessToken!, forHTTPHeaderField: "x-auth-token")
+        
+        let header : HTTPHeaders = ["Content-Type": "application/json", "x-auth-token": LoginService.shared.accessToken!]
+        
+        request.headers = header
+        // header에 x-auth-token 값 넣어야 하는데,,, 넣어야지 post 성공 뜸 postman에서는 성공나왔음
+        
         request.timeoutInterval = 10
         
         // POST 로 보낼 정보
@@ -58,7 +64,6 @@ class CommunityAddViewController: UIViewController {
         } catch {
             print("http Body Error")
         }
-        
         AF.request(request).responseString { (response) in
             
             switch response.result {

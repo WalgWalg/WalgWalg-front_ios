@@ -11,27 +11,44 @@ import MaterialComponents.MaterialButtons
 
 class CommunityViewController: UIViewController {
     var posts:[Post] = []
+    var ranks:[Rank] = []
+    
     @IBOutlet weak var detailAddressLB: UILabel!
     @IBOutlet weak var postCollectionView: UICollectionView!
+    @IBOutlet weak var rankCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rankCollectionView.layer.cornerRadius = 10
         
         setFloatingButton()
         Post.getPostInfo { (posts) in
+            print(posts.count)
             self.posts = posts
             self.postCollectionView.reloadData()
         }
+        Rank.getRankInfo { (ranks) in
+            print(ranks.count)
+            self.ranks = ranks
+            self.rankCollectionView.reloadData()
+        }
         
         setupCommunityCollectionView()
-
+        setupRankCollectionView()
         detailAddressLB.text = "\(LocationService.shared.stringAddress ?? "경기도 용인시 기흥구")"
     }
-
+    
     func setupCommunityCollectionView(){
         postCollectionView.register(UINib(nibName: "CommunityCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "CommunityCollectionViewCell")
         postCollectionView.dataSource = self
         postCollectionView.delegate = self
+        
+    }
+    
+    func setupRankCollectionView(){
+        rankCollectionView.register(UINib(nibName: "RankCollectionView", bundle: Bundle.main), forCellWithReuseIdentifier: "RankCollectionView")
+        rankCollectionView.dataSource = self
+        rankCollectionView.delegate = self
         
     }
     
@@ -65,24 +82,39 @@ class CommunityViewController: UIViewController {
 
 extension CommunityViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CommunityCollectionViewCell", for: indexPath) as? CommunityCollectionViewCell else {
-            return UICollectionViewCell()
+        
+        if collectionView == postCollectionView {
+            guard let postCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CommunityCollectionViewCell", for: indexPath) as? CommunityCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            postCell.generateCell(post: posts[indexPath.item])
+            return postCell
         }
-        cell.generateCell(post: posts[indexPath.item])
-        return cell
+        else{
+            guard let rankCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankCollectionViewCell", for: indexPath) as? RankCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            rankCell.generateCell(rank: ranks[indexPath.item])
+            return rankCell
+        }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return posts.count
+        if collectionView == postCollectionView {
+            return posts.count
+        }
+        else {
+            return ranks.count
+        }
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height = collectionView.frame.height
+        let cellWidth = width/2
+        let cellHeight = height/2
+        
+        return CGSize(width: cellWidth, height: cellHeight)
+        
+    }
+    
 }
-
-//extension CommunityViewController: UICollectionViewFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return collectionView.bounds.size
-//    }
-//}
-//
-//class ListCell: UICollectionViewCell {
-//    @IBOutlet weak var imgView: UIImageView!
-//}

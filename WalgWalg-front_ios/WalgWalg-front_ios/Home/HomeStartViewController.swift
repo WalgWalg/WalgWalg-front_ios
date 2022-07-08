@@ -225,22 +225,3 @@ extension HomeStartViewController:CLLocationManagerDelegate {
         }
     }
 }
-
-//extension HomeStartViewController:MKMapViewDelegate {
-//
-//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-//
-//        guard let polyLine = overlay as? MKPolyline
-//        else {
-//            print("can't draw polyline")
-//            return MKOverlayRenderer()
-//        }
-//        let renderer = MKPolylineRenderer(polyline: polyLine)
-//        renderer.strokeColor = .orange
-//        renderer.lineWidth = 5.0
-//        renderer.alpha = 1.0
-//
-//        return renderer
-//    }
-//
-//}
