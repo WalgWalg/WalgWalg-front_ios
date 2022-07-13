@@ -16,7 +16,7 @@ class Location{
     class func getLocationInfo(completion:@escaping([Location]) -> Void) {
         let address = LocationService.shared.stringAddress
         
-        let path = "http://ec2-15-165-129-147.ap-northeast-2.compute.amazonaws.com:8080/board/region/경기도 용인시 기흥구"
+        let path = "http://ec2-15-165-129-147.ap-northeast-2.compute.amazonaws.com:8080/board/region/\(address)"
         
         guard let encodedStr = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         
@@ -39,9 +39,7 @@ class Location{
                 
                 let json = JSON(value)
                 let data = json["data"][0]
-                self.city = data["city_name"].stringValue
-                self.temp = data["temp"].double ?? 0.0
-                self.weatherInfo = data["weather"]["description"].stringValue
+//                self.img = data["city_name"].stringValue
                 
                 print(data["city_name"].stringValue)
                 print(data["temp"].double ?? 0.0)

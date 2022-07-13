@@ -176,25 +176,24 @@ class HomeStartViewController: UIViewController {
     
     
     
-    //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    //        guard let location = locations.last
-    //        else {return}
-    //        let latitude = location.coordinate.latitude
-    //        let longitude = location.coordinate.longitude
-    //
-    //        if let previousCoordinate = self.previousCoordinate {
-    //            var points: [CLLocationCoordinate2D] = []
-    //            let point1 = CLLocationCoordinate2DMake(previousCoordinate.latitude, previousCoordinate.longitude)
-    //            let point2: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-    //            points.append(point1)
-    //            points.append(point2)
-    //            let lineDraw = MKPolyline(coordinates: points, count:points.count)
-    //            walkView.MapView.addOverlay(lineDraw)
-    //        }
-    //
-    //        self.previousCoordinate = location.coordinate
-    //    }
-    //
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let location = locations.last
+            else {return}
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+    
+            if let previousCoordinate = self.previousCoordinate {
+                var points: [CLLocationCoordinate2D] = []
+                let point1 = CLLocationCoordinate2DMake(previousCoordinate.latitude, previousCoordinate.longitude)
+                let point2: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+                points.append(point1)
+                points.append(point2)
+                let lineDraw = MKPolyline(coordinates: points, count:points.count)
+                walkView.MapView.addOverlay(lineDraw)
+            }
+    
+            self.previousCoordinate = location.coordinate
+        }
     
     
     

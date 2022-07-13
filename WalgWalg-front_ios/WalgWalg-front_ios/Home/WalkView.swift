@@ -9,6 +9,8 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreMotion
+import SwiftyJSON
+import Alamofire
 
 class WalkView: UIView, ComponentProductCellDelegate, MKMapViewDelegate {
     
@@ -17,10 +19,10 @@ class WalkView: UIView, ComponentProductCellDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var WalkEndView: UIView!
     @IBOutlet weak var WalkEndBtn: UIButton!
-    @IBOutlet weak var parkViewConstraint: NSLayoutConstraint!
-    @IBOutlet weak var WalkEndViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var ParkCollectionView: UICollectionView!
     
+    @IBOutlet weak var parkViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var WalkEndViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var TimeIV: UIImageView!
     @IBOutlet weak var KcalIV: UIImageView!
     @IBOutlet weak var KmIV: UIImageView!
@@ -32,6 +34,12 @@ class WalkView: UIView, ComponentProductCellDelegate, MKMapViewDelegate {
 
     var mTimer : Timer?
     var number : Int = 0
+    
+    var location:String = ""
+    var address:String = ""
+    var walkDate: String = ""
+    var walkID: String = ""
+    
     var previousCoordinate: CLLocationCoordinate2D?
     
     var parks:[Park] = []
@@ -39,7 +47,70 @@ class WalkView: UIView, ComponentProductCellDelegate, MKMapViewDelegate {
     func selectedInfoBtn(index: Int) {
         // 선택된 index 값 알아
         print("selected cell : \(index)")
+        print(parks[index])
         
+        
+        //"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        let date = Date()
+        let dateFormatter: DateFormatter = {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+            
+            return dateFormatter
+        }()
+
+        location = parks[index].parkName
+        address = parks[index].address
+        walkDate = dateFormatter.string(from: date)
+        
+        
+        print(dateFormatter.string(from: date))
+                
+        print("start walk")
+        
+        let url = URL(string:"http://ec2-15-165-129-147.ap-northeast-2.compute.amazonaws.com:8080/walk/start")
+        
+        let header : HTTPHeaders = ["Content-Type": "application/json", "x-auth-token": LoginService.shared.accessToken!]
+        
+        var request = URLRequest(url: url!)
+        request.httpMethod = "POST"
+        
+        request.headers = header
+        
+        request.timeoutInterval = 10
+        
+        let bodyParam = ["walkDate" : walkDate, "location" : location, "address" : address] as [String : Any]
+        
+        do {
+            try request.httpBody = JSONSerialization.data(withJSONObject: bodyParam, options: [])
+            print("request try catch")
+
+        } catch {
+            print("http Body Error")
+        }
+        
+        AF.request(request)
+            .validate(statusCode: 200..<300)
+            .responseJSON{ (response) in
+                let result = response.result
+                print("response result : \(result)")
+                switch result {
+                case .success(let value as [String: Any]):
+                    let json = JSON(value)
+                    let data = json["list"][0]
+                    print(response.result)
+                    self.walkID = data["walkId"].stringValue
+
+                    print(data["walkId"].stringValue)
+                    WalkIDService.shared.walkID = data["walkId"].stringValue
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                default:
+                    fatalError("received non-dictionary JSON response")
+                }
+            }
+
         // WalkEndView 띄워야해
         WalkEndView.visib = .visible
         ParkCollectionView.visib = .invisible
@@ -47,7 +118,6 @@ class WalkView: UIView, ComponentProductCellDelegate, MKMapViewDelegate {
         // 초기화 후 데이터 불러오기
         setData()
         //walking start
-        startWalking()
     }
     
     func setData() {
@@ -61,14 +131,6 @@ class WalkView: UIView, ComponentProductCellDelegate, MKMapViewDelegate {
         self.KmLabel.text = "0"
         self.KcalLabel.text = "0"
         self.TimeLabel.text = "00:00"
-    }
-    
-    func startWalking(){
-        // 걷기 시작
-//        self.WalkCountLabel.text = "\(HealthService.shared.StepCount)"
-//        self.KmLabel.text = "\(HealthService.shared.Distance)"
-//        self.KcalLabel.text = "\(HealthService.shared.Kcal)"
-//        self.TimeLabel.text = "\(HealthService.shared.Time)"
     }
     
     func setupPark() {
@@ -85,15 +147,17 @@ class WalkView: UIView, ComponentProductCellDelegate, MKMapViewDelegate {
         
         print("walk end step : \(HealthService.shared.StepCount)")
         print("walk end distance : \(HealthService.shared.Distance)")
+        
+        
 
     }
     
     @IBAction func WalkViewBtn(_ sender: Any) {
-        if WalkEndViewConstraint.constant == 530 {
-            WalkEndViewConstraint.constant = 750
+        if WalkEndViewConstraint.constant == 549 {
+            WalkEndViewConstraint.constant = 700
         }
-        else if WalkEndViewConstraint.constant == 750 {
-            WalkEndViewConstraint.constant = 530
+        else if WalkEndViewConstraint.constant == 700 {
+            WalkEndViewConstraint.constant = 549
         }
     }
     

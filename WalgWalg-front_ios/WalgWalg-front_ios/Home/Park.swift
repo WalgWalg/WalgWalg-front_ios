@@ -26,9 +26,9 @@ class Park{
     }
     
     class func getParkInfo(completion:@escaping([Park]) -> Void) {
-        let address = LocationService.shared.stringAddress
+        let address = LocationService.shared.stringAddress!
         
-        print("get Park address : \(LocationService.shared.stringAddress!)")
+        print("get Park address : \(address)")
         
         let path = "http://ec2-15-165-129-147.ap-northeast-2.compute.amazonaws.com:8080/park/경기도 용인시 기흥구"
         guard let encodedStr = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }

@@ -19,11 +19,11 @@ class HomeViewController: UIViewController{
     
     var locationManager:CLLocationManager?
     var currentLocation:CLLocationCoordinate2D!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         requestAuthorization()
         let view = UIView()
         
@@ -79,23 +79,24 @@ extension HomeViewController:CLLocationManagerDelegate {
             
             LocationService.shared.longitude = currentLocation.longitude
             LocationService.shared.latitude = currentLocation.latitude
-            let converter: LocationConverter = LocationConverter()
-                    let (x, y): (Int, Int)
-                        = converter.convertGrid(lon: LocationService.shared.longitude!, lat: LocationService.shared.latitude!)
-                    
-                    let findLocation: CLLocation = CLLocation(latitude: LocationService.shared.latitude!, longitude: LocationService.shared.longitude!)
-                    let geoCoder: CLGeocoder = CLGeocoder()
-                    let local: Locale = Locale(identifier: "Ko-kr") // Korea
-                    geoCoder.reverseGeocodeLocation(findLocation, preferredLocale: local) { (place, error) in
-                        if let address: [CLPlacemark] = place {
-                            print("(longitude, latitude) = (\(x), \(y))")
-                            print("시(도): \(address.last?.administrativeArea)")
-                            print("구(군): \(address.last?.locality)")
-                            print("구(군): \(address.last?.subLocality)")
-                            print("구(군): \(address.last?.country)")
+            
+            
+            let findLocation: CLLocation = CLLocation(latitude: LocationService.shared.latitude!, longitude: LocationService.shared.longitude!)
+//            let findLocation: CLLocation = CLLocation(latitude: 37.382293995185, longitude: 126.96122262759)
 
-                        }
-                    }
+            let geoCoder: CLGeocoder = CLGeocoder()
+            let local: Locale = Locale(identifier: "Ko-kr") // Korea
+            geoCoder.reverseGeocodeLocation(findLocation, preferredLocale: local) { (place, error) in
+                if let address: [CLPlacemark] = place {
+                    print("시(도): \(address.last?.administrativeArea)")
+                    print("구(군): \(address.last?.locality)")
+                    print("구(군): \(address.last?.subLocality)")
+
+//                    LocationService.shared.stringAddress = "\(address.last?.administrativeArea! ?? "경기도") \(address.last?.locality ?? "용인시") \(address.last?.subLocality ?? "기흥구")"
+                    LocationService.shared.stringAddress = "경기도 용인시 기흥구"
+                    print(LocationService.shared.stringAddress!)
+                }
+            }
             print(LocationService.shared.latitude as Any)
             print(LocationService.shared.longitude as Any)
         }

@@ -47,10 +47,11 @@
 		07955E02286320D8009E0EDE /* CommunityAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07955E01286320D8009E0EDE /* CommunityAddViewController.swift */; };
 		07BC8EB62873123B0012D1A1 /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BC8EB52873123B0012D1A1 /* HealthService.swift */; };
 		07BC8EB928731AF80012D1A1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BC8EB828731AF80012D1A1 /* MapKit.framework */; };
-		07BC8EBB287334810012D1A1 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BC8EBA287334810012D1A1 /* HealthKit.framework */; };
 		07BC8EF428733C440012D1A1 /* LocationConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BC8EF328733C440012D1A1 /* LocationConverter.swift */; };
 		07BC8EF72874A37C0012D1A1 /* RankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BC8EF52874A37C0012D1A1 /* RankCollectionViewCell.swift */; };
 		07BC8EF82874A37C0012D1A1 /* RankCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BC8EF62874A37C0012D1A1 /* RankCollectionViewCell.xib */; };
+		07E05946287D8F6800702A00 /* RefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E05945287D8F6800702A00 /* RefreshToken.swift */; };
+		07E0594A287DA02900702A00 /* WalkIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E05949287DA02900702A00 /* WalkIDService.swift */; };
 		07E6CBA7286C020400B4CEC6 /* ParkCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6CBA5286C020400B4CEC6 /* ParkCollectionViewCell.swift */; };
 		07E6CBA8286C020400B4CEC6 /* ParkCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07E6CBA6286C020400B4CEC6 /* ParkCollectionViewCell.xib */; };
 		07E6CBAA286C024600B4CEC6 /* Park.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6CBA9286C024600B4CEC6 /* Park.swift */; };
@@ -108,6 +109,8 @@
 		07BC8EF328733C440012D1A1 /* LocationConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConverter.swift; sourceTree = "<group>"; };
 		07BC8EF52874A37C0012D1A1 /* RankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankCollectionViewCell.swift; sourceTree = "<group>"; };
 		07BC8EF62874A37C0012D1A1 /* RankCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankCollectionViewCell.xib; sourceTree = "<group>"; };
+		07E05945287D8F6800702A00 /* RefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshToken.swift; sourceTree = "<group>"; };
+		07E05949287DA02900702A00 /* WalkIDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkIDService.swift; sourceTree = "<group>"; };
 		07E6CBA5286C020400B4CEC6 /* ParkCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkCollectionViewCell.swift; sourceTree = "<group>"; };
 		07E6CBA6286C020400B4CEC6 /* ParkCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParkCollectionViewCell.xib; sourceTree = "<group>"; };
 		07E6CBA9286C024600B4CEC6 /* Park.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Park.swift; sourceTree = "<group>"; };
@@ -123,7 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07BC8EBB287334810012D1A1 /* HealthKit.framework in Frameworks */,
 				07BC8EB928731AF80012D1A1 /* MapKit.framework in Frameworks */,
 				D5FC114B3A56ED1009F0E5BE /* Pods_WalgWalg_front_ios.framework in Frameworks */,
 			);
@@ -176,6 +178,7 @@
 		072EAF3C2874BA1C00406C07 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				07E05949287DA02900702A00 /* WalkIDService.swift */,
 				07BC8EB52873123B0012D1A1 /* HealthService.swift */,
 				07775DFA28655EAC00DCDF5A /* LocationService.swift */,
 				072EAF382874B12D00406C07 /* LoginService.swift */,
@@ -259,6 +262,7 @@
 				07150307282A42D8002FB1C9 /* MainViewController.swift */,
 				0715032228320BE1002FB1C9 /* LoginViewController.swift */,
 				0715032428320BEF002FB1C9 /* RegisterViewController.swift */,
+				07E05945287D8F6800702A00 /* RefreshToken.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -411,6 +415,7 @@
 				07150304282A42D8002FB1C9 /* AppDelegate.swift in Sources */,
 				0715032B28320C1A002FB1C9 /* CommunityViewController.swift in Sources */,
 				07775DFE286561C600DCDF5A /* Helper.swift in Sources */,
+				07E0594A287DA02900702A00 /* WalkIDService.swift in Sources */,
 				07775DF928655EA200DCDF5A /* KeyCenter.swift in Sources */,
 				07150306282A42D8002FB1C9 /* SceneDelegate.swift in Sources */,
 				07E6CBAA286C024600B4CEC6 /* Park.swift in Sources */,
@@ -434,6 +439,7 @@
 				072EAF392874B12D00406C07 /* LoginService.swift in Sources */,
 				07E6CBA7286C020400B4CEC6 /* ParkCollectionViewCell.swift in Sources */,
 				07BC8EB62873123B0012D1A1 /* HealthService.swift in Sources */,
+				07E05946287D8F6800702A00 /* RefreshToken.swift in Sources */,
 				07775DFB28655EAC00DCDF5A /* LocationService.swift in Sources */,
 				0715032928320C07002FB1C9 /* LocationViewController.swift in Sources */,
 				072EAF402878212A00406C07 /* Rank.swift in Sources */,
@@ -590,12 +596,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z9SR7M73L8;
+				DEVELOPMENT_TEAM = M8NBY6RTGH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WalgWalg-front_ios/Info.plist";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Needs health identifier will be used to checking your walk";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Needs health identifier will be used to checking your walk";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Needs location identifier will be used to home tracking with hardware";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Allow my app to access motion usage.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -606,7 +613,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Bhyn.WalgWalg-front-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bhyn.WalgWalg-front-ios-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -625,12 +632,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Z9SR7M73L8;
+				DEVELOPMENT_TEAM = M8NBY6RTGH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WalgWalg-front_ios/Info.plist";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "Needs health identifier will be used to checking your walk";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Needs health identifier will be used to checking your walk";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Needs location identifier will be used to home tracking with hardware";
+				INFOPLIST_KEY_NSMotionUsageDescription = "Allow my app to access motion usage.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -641,7 +649,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Bhyn.WalgWalg-front-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "Bhyn.WalgWalg-front-ios-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -32,6 +32,19 @@ class RegisterViewController: UIViewController {
         
         swipeRecognizer()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        // 옵져버를 등록
+        // 옵저버 대상 self
+        // 옵져버 감지시 실행 함수
+        // 옵져버가 감지할 것
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardUp), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDown), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
     
     func swipeRecognizer(){
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesuture(_:)))
@@ -56,7 +69,7 @@ class RegisterViewController: UIViewController {
         guard let strNick = TFnickname.text, !strNick.isEmpty else { return }
         guard let strAddr = TFaddress.text, !strAddr.isEmpty else { return }
 
-        if TFpw != TFcheckpw {
+        if strPW != strCheckPW {
             print("password is not same")
         }
         else{
@@ -90,7 +103,7 @@ class RegisterViewController: UIViewController {
                         print("POST 성공")
                         print(response.result)
                         print(response)
-                        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "TabBarController")
+                        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
                         else{
                             return
                         }
@@ -110,5 +123,27 @@ class RegisterViewController: UIViewController {
 
             }
         }
+    }
+    
+    @objc func keyboardUp(notification:NSNotification) {
+        if let keyboardFrame:NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+           let keyboardRectangle = keyboardFrame.cgRectValue
+       
+            UIView.animate(
+                withDuration: 0.3
+                , animations: {
+                    self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardRectangle.height + 60)
+                }
+            )
+        }
+    }
+
+    @objc func keyboardDown() {
+        self.view.transform = .identity
+    }
+    
+    @objc func viewDidTap(gesture: UIGestureRecognizer){
+        // editing 강제 멈춤 -> 키보드 내려감
+        view.endEditing(true)
     }
 }
